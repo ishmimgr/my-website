@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>فروشگاه عینک - بند و قاب عینک</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      height: 50px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      direction: ltr;
+      
+    }
+
+    .logo {
+      width: 120px;
+      padding-left: 35px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-links li {
+      padding-right: 120px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: color 0.3s;
+    }
+
+    .nav-links li:hover {
+      color: #007bff;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 30px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+    }
+    .footer-logo img {
+      height: 40px;
+    }
+    .footer-logo p {
+      margin: 2px 0;
+    }
+    .shop, .footer-links, .socials {
+      margin: 10px;
+    }
+    .shop p, .footer-links p, .socials p {
+      margin: 5px 0;
+    }
+
+    .main-content {
+      padding: 40px 20px;
+    }
+
+    .category-section {
+      margin: 50px 0;
+      padding: 30px 0;
+      background: linear-gradient(to right, #f8f9fa 50%, #ffffff 50%);
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .category-title {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .category-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: #3498db;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid #f8f9fa;
+    }
+
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-price {
+      color: #e74c3c;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+
+    .product-badge {
+      background: #3498db;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .section-divider {
+      height: 2px;
+      background: #eee;
+      margin: 60px 20px;
+      position: relative;
+    }
+
+    .section-divider::after {
+      content: '✧';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #f8f8f8;
+      padding: 0 15px;
+      color: #3498db;
+    }
+
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .category-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="./images/glasses-logo.png" alt="لوگوی سایت" class="logo">
+      <ul class="nav-links" style="list-style:none; display:flex; gap:15px; margin:0; padding:0;">
+        <li><a href="womens.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات زنانه</a></li>
+        <li><a href="mans.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات مردانه</a></li>
+        <li><a href="Contact-form.html" style="text-decoration:none; color:inherit; font-family:inherit">ارتباط با ما</a></li>
+        <li><a href="band.html" style="text-decoration:none; color:inherit; font-family:inherit">بند عینک و قاب</a></li>
+        <li><a href="cart.html" style="text-decoration:none; color:inherit; font-family:inherit">سبد خرید</a></li>
+      </ul>
+      <div class="menu-icon">☰</div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="category-section">
+      <div class="category-header">
+        <h2 class="category-title">بندهای عینک</h2>
+      </div>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="./images/models/IMG_6711.jpg" class="product-image" alt="بند چرمی">
+          <div class="product-info">
+            <span class="product-badge">پرفروش</span>
+            <h3>بند چرمی دست‌دوز</h3>
+            <p class="product-price">۱,۴۵۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/models/unique-sunglasses-strap.jpg" class="product-image" alt="بند ورزشی">
+          <div class="product-info">
+            <span class="product-badge">جدید</span>
+            <h3>بند سیلیکونی ورزشی</h3>
+            <p class="product-price">۹۵۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="category-section">
+      <div class="category-header">
+        <h2 class="category-title">قاب‌های عینک</h2>
+      </div>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="./images/models/_QzYLVpbvrefB5ca.jpg" class="product-image" alt="قاب کلاسیک">
+          <div class="product-info">
+            <span class="product-badge">محبوب</span>
+            <h3>قاب تیتانیوم سبک</h3>
+            <p class="product-price">۵,۲۰۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./images/models/280x280.jpg" class="product-image" alt="قاب مدرن">
+          <div class="product-info">
+            <span class="product-badge">ویژه</span>
+            <h3>قاب استیل ضدخش</h3>
+            <p class="product-price">۶,۷۰۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./images/glasses-logo.png" alt="لوگوی سایت">
+        <div>
+          <p>&copy; فروشگاه عینک</p>
+          <p>همه حقوق محفوظ است.</p>
+        </div>
+      </div>
+      <div class="shop">
+        <p>فروشگاه</p>
+        <p>عینک</p>
+        <p>عینک آفتابی</p>
+        <p>لوازم جانبی</p>
+        <p>کارت هدیه</p>
+      </div>
+      <div class="footer-links">
+        <p>درباره ما</p>
+        <p>ارسال و بازگشت</p>
+        <p>خدمات مشتریان</p>
+      </div>
+      <div class="socials">
+        <p>فیس‌بوک</p>
+        <p>اینستاگرام</p>
+        <p>توییتر</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

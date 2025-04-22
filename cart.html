@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>سبد خرید - فروشگاه عینک</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      height: 50px;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      direction: ltr;
+      
+    }
+
+    .logo {
+      width: 120px;
+      padding-left: 35px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-links li {
+      padding-right: 120px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: color 0.3s;
+    }
+
+    .nav-links li:hover {
+      color: #007bff;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+    }
+
+    .footer-logo img {
+      height: 40px;
+    }
+
+    .footer-logo p {
+      margin: 2px 0;
+    }
+
+    .shop,
+    .footer-links,
+    .socials {
+      margin: 10px;
+    }
+
+    .shop p,
+    .footer-links p,
+    .socials p {
+      margin: 5px 0;
+    }
+
+    .cart-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      padding-top: 80px;
+    }
+
+    .cart-title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .cart-table th {
+      background: #3498db;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .cart-table td {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .product-cell {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cart-product-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .quantity-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8f9fa;
+      padding: 8px 15px;
+      border-radius: 25px;
+    }
+
+    .quantity-btn {
+      cursor: pointer;
+      padding: 5px 10px;
+      border: none;
+      background: #3498db;
+      color: white;
+      border-radius: 50%;
+    }
+
+    .cart-summary {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin-left: auto;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .total-price {
+      color: #e74c3c;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .checkout-btn {
+      background: #27ae60;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .product-cell {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cart-table thead {
+        display: none;
+      }
+
+      .cart-table td {
+        display: block;
+        text-align: center;
+      }
+
+      .cart-summary {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="./images/glasses-logo.png" alt="لوگوی سایت" class="logo">
+      <ul class="nav-links" style="list-style:none; display:flex; gap:15px; margin:0; padding:0;">
+        <li><a href="womens.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات زنانه</a>
+        </li>
+        <li><a href="mans.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات مردانه</a></li>
+        <li><a href="Contact-form.html" style="text-decoration:none; color:inherit; font-family:inherit">ارتباط با
+            ما</a></li>
+        <li><a href="band.html" style="text-decoration:none; color:inherit; font-family:inherit">بند عینک و قاب</a></li>
+        <li><a href="cart.html" style="text-decoration:none; color:inherit; font-family:inherit">سبد خرید</a></li>
+      </ul>
+      <div class="menu-icon">☰</div>
+    </nav>
+  </header>
+  
+  <main class="cart-container">
+    <h1 class="cart-title">سبد خرید شما</h1>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>محصول</th>
+          <th>قیمت</th>
+          <th>تعداد</th>
+          <th>جمع کل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="product-cell">
+              <img src="./images/models/Screenshot from 2023-08-10 10-14-51.png" class="cart-product-img"
+                alt="بند عینک">
+              <div>
+                <h3>بند چرمی لاکچری</h3>
+                <p>کد محصول: STR-245</p>
+              </div>
+            </div>
+          </td>
+          <td>۱,۲۵۰,۰۰۰ تومان</td>
+          <td>
+            <div class="quantity-control">
+              <button class="quantity-btn">+</button>
+              <span>2</span>
+              <button class="quantity-btn">-</button>
+            </div>
+          </td>
+          <td>۲,۵۰۰,۰۰۰ تومان</td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="product-cell">
+              <img src="./images/models/Screenshot from 2023-08-09 21-29-02.png" class="cart-product-img"
+                alt="قاب عینک">
+              <div>
+                <h3>قاب استیل ضدحساسیت</h3>
+                <p>کد محصول: FRM-879</p>
+              </div>
+            </div>
+          </td>
+          <td>۴,۸۰۰,۰۰۰ تومان</td>
+          <td>
+            <div class="quantity-control">
+              <button class="quantity-btn">+</button>
+              <span>1</span>
+              <button class="quantity-btn">-</button>
+            </div>
+          </td>
+          <td>۴,۸۰۰,۰۰۰ تومان</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <div class="summary-item">
+        <span>جمع کل:</span>
+        <span>۷,۳۰۰,۰۰۰ تومان</span>
+      </div>
+      <div class="summary-item">
+        <span>هزینه ارسال:</span>
+        <span>رایگان</span>
+      </div>
+      <div class="summary-item total-price">
+        <span>مبلغ قابل پرداخت:</span>
+        <span>۷,۳۰۰,۰۰۰ تومان</span>
+      </div>
+
+      <button class="checkout-btn">تکمیل سفارش</button>
+      <button class="checkout-btn" style="background: #3498db; margin-top: 10px;">ادامه خرید</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./images/glasses-logo.png" alt="لوگوی سایت">
+        <div>
+          <p>&copy; فروشگاه عینک</p>
+          <p>همه حقوق محفوظ است.</p>
+        </div>
+      </div>
+      <div class="shop">
+        <p>فروشگاه</p>
+        <p>عینک</p>
+        <p>عینک آفتابی</p>
+        <p>لوازم جانبی</p>
+        <p>کارت هدیه</p>
+      </div>
+      <div class="footer-links">
+        <p>درباره ما</p>
+        <p>ارسال و بازگشت</p>
+        <p>خدمات مشتریان</p>
+      </div>
+      <div class="socials">
+        <p>فیس‌بوک</p>
+        <p>اینستاگرام</p>
+        <p>توییتر</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

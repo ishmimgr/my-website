@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>محصولات زنانه - فروشگاه عینک</title>
+  <meta name="description" content="صفحه محصولات زنانه">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        height: 80px;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+      
+      .logo {
+        width: 120px;
+      }
+      
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      
+      .nav-links li {
+        margin-left: 100px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+      
+      .nav-links li:hover {
+        color: #007bff;
+      }
+      
+      .menu-icon {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    .women-banner {
+      background: url('./images/models/Screenshot from 2023-08-10 10-16-55.png') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .women-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .banner-text {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-size: 2.5em;
+      font-weight: 600;
+    }
+    .products-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      font-weight: 600;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product-item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .product-price {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #e74c3c;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 30px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px;
+    }
+    .footer-logo img {
+      height: 40px;
+    }
+    .footer-logo p {
+      margin: 2px 0;
+    }
+    .shop, .footer-links, .socials {
+      margin: 10px;
+    }
+    .shop p, .footer-links p, .socials p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="./images/glasses-logo.png" alt="لوگوی سایت" class="logo">
+      <ul class="nav-links" style="list-style:none; display:flex; gap:15px; margin:0; padding:0;">
+        <li><a href="womens.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات زنانه</a></li>
+        <li><a href="mans.html" style="text-decoration:none; color:inherit; font-family:inherit">محصولات مردانه</a></li>
+        <li><a href="Contact-form.html" style="text-decoration:none; color:inherit; font-family:inherit">ارتباط با ما</a></li>
+        <li><a href="band.html" style="text-decoration:none; color:inherit; font-family:inherit">بند عینک و قاب</a></li>
+        <li><a href="cart.html" style="text-decoration:none; color:inherit; font-family:inherit">سبد خرید</a></li>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <section class="women-banner">
+    <div class="banner-text">محصولات زنانه</div>
+  </section>
+
+  <section class="products-container">
+    <div class="section-title">محصولات زنانه</div>
+    <div class="products-grid">
+      <div class="product-item">
+        <img class="product-image" src="./images/models/Screenshot from 2023-08-09 21-22-43.png" alt="محصول زنانه ۱">
+        <div class="product-price">۴,۵۰۰,۰۰۰ تومان</div>
+      </div>
+      <div class="product-item">
+        <img class="product-image" src="./images/models/Screenshot from 2023-08-10 10-16-55.png" alt="محصول زنانه ۲">
+        <div class="product-price">۵,۰۰۰,۰۰۰ تومان</div>
+      </div>
+      <div class="product-item">
+        <img class="product-image" src="./images/models/Screenshot from 2023-08-10 12-30-19.png" alt="محصول زنانه ۳">
+        <div class="product-price">۶,۰۰۰,۰۰۰ تومان</div>
+      </div>
+      <div class="product-item">
+        <img class="product-image" src="./images/models/Screenshot from 2023-08-09 21-30-30.png" alt="محصول زنانه ۴">
+        <div class="product-price">۵,۵۰۰,۰۰۰ تومان</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./images/glasses-logo.png" alt="لوگوی سایت">
+        <div>
+          <p>&copy; فروشگاه عینک</p>
+          <p>همه حقوق محفوظ است.</p>
+        </div>
+      </div>
+      <div class="shop">
+        <p>فروشگاه</p>
+        <p>عینک</p>
+        <p>عینک آفتابی</p>
+        <p>لوازم جانبی</p>
+        <p>کارت هدیه</p>
+      </div>
+      <div class="footer-links">
+        <p>درباره ما</p>
+        <p>ارسال و بازگشت</p>
+        <p>خدمات مشتریان</p>
+      </div>
+      <div class="socials">
+        <p>فیس‌بوک</p>
+        <p>اینستاگرام</p>
+        <p>توییتر</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
